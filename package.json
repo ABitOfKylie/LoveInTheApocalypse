@@ -1,0 +1,54 @@
+{
+  "name": "loveintheapocalypse",
+  "version": "1.0.0",
+  "description": "Zombie themed game using React, MongoDB and Mongoose",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon --use-strict server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ABitOfKylie/LoveInTheApocalypse.git"
+  },
+  "keywords": [
+    "zombie",
+    "project3"
+  ],
+  "author": "Kylie Soderblom, Nathaniel Van Doren Taylor McCullough",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ABitOfKylie/LoveInTheApocalypse/issues"
+  },
+  "homepage": "https://github.com/ABitOfKylie/LoveInTheApocalypse#readme",
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "jsonwebtoken": "^7.1.9",
+    "material-ui": "^0.16.4",
+    "method-override": "^2.3.6",
+    "mongodb": "^2.2.11",
+    "mongoose": "^4.7.1",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-router": "^3.0.0",
+    "react-tap-event-plugin": "^2.0.1",
+    "validator": "^6.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "dns": "^0.2.2",
+    "joi": "^10.0.2",
+    "json-loader": "^0.5.4",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
