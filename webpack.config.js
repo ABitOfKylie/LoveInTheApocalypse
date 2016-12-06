@@ -1,27 +1,35 @@
 module.exports = {
-  // the entry file for the bundle
-  // entry: __dirname + '/src/index.js',
-   entry: "./index.js",
+    // the entry file for the bundle
+    // entry: __dirname + '/src/index.js',
+    entry: __dirname + "/src/App.js",
 
-  // the bundle file we will get in the result
+    // the bundle file we will get in the result
     output: {
-    filename: "public/bundle.js"
-  },
+        filename: "public/bundle.js"
+    },
 
+    // resolve: {
+    //     extensions: [
+    //         ".js",
+    //         ".json"
+    //     ]
+    // },
 
-  module: {
+    module: {
 
-    // apply loaders to files that meet given conditions
-    loaders: [{
-      test: /\.jsx?$/,
-      exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ["react", "es2015"]
-      }
-    }],
-  },
+        // apply loaders to files that meet given conditions
+        loaders: [{
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loader: 'babel',
+                query: {
+                    presets: ["react", "es2015"]
+                }
+            },
+            { test: /\.json$/, loader: 'json-loader' }
+        ],
+    },
 
-  // start Webpack in a watch mode, so Webpack will rebuild the bundle on changes
-  // watch: true
+    // start Webpack in a watch mode, so Webpack will rebuild the bundle on changes
+    watch: false
 };

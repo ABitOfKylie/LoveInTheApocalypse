@@ -1,27 +1,45 @@
-import Base from '../components/Base.jsx';
-import Home from '../components/Home.jsx';
-import LoginForm from '../components/LoginForm.jsx';
-import SignUpForm from '../components/SignUpForm.jsx';
+import Main from './components/Main.js';
+import HomePage from './components/HomePage.js';
+import DashboardPage from './containers/DashboardPage.js';
+import LoginPage from './containers/LoginPage.js';
+import SignUpPage from './containers/SignUpPage.js';
+import Auth from './modules/Auth';
 
 
 const routes = {
-  // base component (wrapper for the whole application).
-  component: Base,
+  // main component (wrapper for the whole application).
+  component: Main,
   childRoutes: [
 
     {
       path: '/',
-      component: Home
+      getComponent: (location, callback) => {
+        if (Auth.isUserAuthenticated()) {
+          callback(null, DashboardPage);
+        } else {
+          callback(null, HomePage);
+        }
+      }
     },
 
     {
       path: '/login',
-      component: LoginForm
+      component: LoginPage
     },
 
     {
       path: '/signup',
-      component: SignUpForm
+      component: SignUpPage
+    },
+
+    {
+      path: '/logout',
+      onEnter: (nextState, replace) => {
+        Auth.deauthenticateUser();
+
+        // change the current URL to /
+        replace('/');
+      }
     }
 
   ]

@@ -3,7 +3,6 @@ var mongoose = require('mongoose');
 // create a schema class
 var Schema = mongoose.Schema;
 
-// create the Note schema
 var ZombieSchema = new Schema({
   // just a string
   name: {
@@ -13,7 +12,7 @@ var ZombieSchema = new Schema({
   location: {
     type:String
   },
-    questions: {
+    image: {
     type:String
   }
 });
@@ -21,8 +20,8 @@ var ZombieSchema = new Schema({
 // Remember, Mongoose will automatically save the ObjectIds of the notes.
 // These ids are referred to in the Article model.
 
-// create the Note model with the NoteSchema
+// create the Z model with the ZSchema
 var Zombie = mongoose.model('Zombie', ZombieSchema);
 
-// export the Note model
+// export the Z model
 module.exports = Zombie;

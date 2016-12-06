@@ -1,4 +1,4 @@
 {
-  "db": "mongodb://localhost/loveintheapocalypse",
+"dbUri": "mongodb://localhost/root",
   "jwtSecret": "a secret phrase!!"
 }

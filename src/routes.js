@@ -1,13 +1,13 @@
-import Main from '../components/Main.jsx';
-import Home from '../components/Home.jsx';
-import Dashboard from '../components/Dashboard.jsx';
-import LoginForm from '../components/LoginForm.jsx';
-import SignUpForm from '../components/SignUpForm.jsx';
-import Auth from '../modules/Auth';
+import Main from './components/Main.js';
+import Home from './components/Home.js';
+import DashboardPage from './containers/DashboardPage.js';
+import LoginPage from './containers/LoginPage.js';
+import SignUpPage from './containers/SignUpPage.js';
+import Auth from './modules/Auth';
 
 
 const routes = {
-  // base component 
+  // main component 'wrapper for whole app'
   component: Main,
   childRoutes: [
 
@@ -24,21 +24,21 @@ const routes = {
 
     {
       path: '/login',
-      component: LoginForm
+      component:LoginPage
     },
 
     {
       path: '/signup',
-      component: SignUpForm
+      component: SignUpPage
     },
 
     {
       path: '/logout',
-      onEnter: (nextState, replaceState) => {
+      onEnter: (nextState, replace) => {
         Auth.deauthenticateUser();
 
         // change the current URL to /
-        replaceState(null, '/');
+        replace('/');
       }
     },
 
